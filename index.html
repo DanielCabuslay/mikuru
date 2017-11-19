@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Mikuru</title>
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@0.25.0/dist/material-components-web.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" id="theme" href="style/theme_light.css">
+    <link rel="icon" type="image/png" href="/images/favicon/favicon.png">
+    <link rel="shortcut_icon" href="/images/favicon/favicon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#1976d2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body class="mdc-typography">
+    <header class="mdc-toolbar mdc-toolbar--fixed">
+        <div class="mdc-toolbar__row">
+            <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+                <span class="mdc-toolbar__title">Clock</span>
+            </section>
+            <section class="mdc-toolbar__section mdc-toolbar__section--align-end" role="toolbar">
+                <nav id="toolbar-tab-bar" class="mdc-tab-bar mdc-tab-bar--icons-with-text">
+                    <a class="mdc-tab mdc-tab--with-icon-and-text mdc-tab--active" id="clock_tab" href="#clock">
+                        <i class="material-icons mdc-tab__icon" aria-hidden="true">access_time</i>
+                        <span class="mdc-tab__icon-text">Clock</span>
+                    </a>
+                    <a class="mdc-tab mdc-tab--with-icon-and-text" id="timer_tab" href="#timer">
+                        <i class="material-icons mdc-tab__icon" aria-hidden="true">hourglass_empty</i>
+                        <span class="mdc-tab__icon-text">Timer</span>
+                    </a>
+                    <a class="mdc-tab mdc-tab--with-icon-and-text" id="stopwatch_tab" href="#stopwatch">
+                        <i class="material-icons mdc-tab__icon" aria-hidden="true">timer</i>
+                        <span class="mdc-tab__icon-text">Stopwatch</span>
+                    </a>
+                    <a class="mdc-tab mdc-tab--with-icon-and-text" id="settings_tab" href="#stopwatch">
+                        <i class="material-icons mdc-tab__icon" aria-hidden="true">settings</i>
+                        <span class="mdc-tab__icon-text">Settings</span>
+                    </a>
+                    <span class="mdc-tab-bar__indicator"></span>
+                </nav>
+          </section>
+        </div>
+    </header>
+    <div class="mdc-toolbar-fixed-adjust">
+    <main>
+        <div id="clock" class="tab-content">
+            <div id="time">
+                <span id="time_numeral" class="mdc-typography--display4"></span>
+                <span id="time_ampm" class="mdc-typography--display1"></span>
+            </div>
+            <div id="date" class="mdc-typography--body1"></div>
+            <button class="mdc-fab material-icons">
+                <span class="mdc-fab__icon">public</span>
+            </button>
+        </div>
+        <div id="timer" class="tab-content">
+            Timer
+            <button class="mdc-fab material-icons">
+                <span class="mdc-fab__icon">play_arrow</span>
+            </button>
+        </div>
+        <div id="stopwatch" class="tab-content">
+            Stopwatch
+            <button class="mdc-fab material-icons">
+                <span class="mdc-fab__icon">play_arrow</span>
+            </button>
+        </div>
+        <div id="settings" class="tab-content">
+            <h3 class="mdc-list-group__subheader">Clock</h3>
+            <ul class="mdc-list mdc-list--two-line">
+              <li class="mdc-list-item">
+                <span class="mdc-list-item__text">
+                  Show 24-hour clock
+                  <span class="mdc-list-item__text__secondary">Switch between 12-hour and 24-hour clocks</span>
+                </span>
+                <span class="mdc-list-item__end-detail">
+                    <div class="mdc-switch">
+                      <input type="checkbox" id="24h-switch" class="mdc-switch__native-control" />
+                      <div class="mdc-switch__background">
+                        <div class="mdc-switch__knob"></div>
+                      </div>
+                    </div>
+                </span>
+              </li>
+              <li class="mdc-list-item">
+                <span class="mdc-list-item__text">
+                  Show seconds
+                  <span class="mdc-list-item__text__secondary">Show second count on clock</span>
+                </span>
+                <span class="mdc-list-item__end-detail">
+                    <div class="mdc-switch">
+                      <input type="checkbox" id="second-switch" class="mdc-switch__native-control" />
+                      <div class="mdc-switch__background">
+                        <div class="mdc-switch__knob"></div>
+                      </div>
+                    </div>
+                </span>
+              </li>
+            </ul>
+            <hr class="mdc-list-divider">
+            <h3 class="mdc-list-group__subheader">Visual</h3>
+            <ul class="mdc-list mdc-list--two-line">
+              <li class="mdc-list-item">
+                <span class="mdc-list-item__text">
+                  Dark Theme
+                  <!-- <span class="mdc-list-item__text__secondary">Uses dark colours through UI</span> -->
+                </span>
+                <span class="mdc-list-item__end-detail">
+                    <div class="mdc-switch">
+                      <input type="checkbox" id="dark-switch" class="mdc-switch__native-control" />
+                      <div class="mdc-switch__background">
+                        <div class="mdc-switch__knob"></div>
+                      </div>
+                    </div>
+                </span>
+              </li>
+            </ul>
+            <hr class="mdc-list-divider">
+            <h3 class="mdc-list-group__subheader">About</h3>
+            <ul class="mdc-list mdc-list--two-line">
+              <a target="_blank" href="https://github.com/DdcCabuslay/mikuru" class="mdc-list-item">
+                <span class="mdc-list-item__text">
+                  GitHub Repository
+                  <span class="mdc-list-item__text__secondary">View the code on GitHub</span>
+                </span>
+              </a>
+              <a target="_blank" href="http://ddccabuslay.me/" class="mdc-list-item">
+                <span class="mdc-list-item__text">
+                  My website
+                  <span class="mdc-list-item__text__secondary">Visit the developer's website</span>
+                </span>
+              </a>
+            </ul>
+        </div>
+    </main>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+<script src="https://unpkg.com/material-components-web@0.25.0/dist/material-components-web.min.js"></script>
+<script src="script/clock.js"></script>
+<script src="script/toolbar.js"></script>
+<script src="script/settings.js"></script>
+</html>

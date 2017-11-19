@@ -1,0 +1,18 @@
+:root {
+  --mdc-theme-primary: #212121;
+  --mdc-theme-primary-light: #484848;
+  --mdc-theme-primary-dark: #000000;
+  --mdc-theme-secondary: #0091ea;
+  --mdc-theme-secondary-light: #64c1ff;
+  --mdc-theme-secondary-dark: #0064b7;
+  --mdc-theme-text-secondary-on-secondary: #000;
+}
+html {
+	background-color: var(--mdc-theme-primary);
+}
+html, .mdc-list-item__text, .mdc-list-item__text__secondary, .mdc-list-group__subheader {
+	color: var(--mdc-theme-text-primary-on-primary);
+}
+.mdc-list-divider {
+	border-bottom-color: rgba(255, 255, 255, 0.2);
+}
