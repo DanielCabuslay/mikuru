@@ -23,19 +23,23 @@ $('#clock_tab').click(function() {
 	$('.tab-content').css('display', 'none');
 	$('#clock').css('display', 'block');
 	$('.mdc-toolbar__title').text('Clock');
+	$('body').removeClass('top-align');
 });
 $('#timer_tab').click(function() {
 	$('.tab-content').css('display', 'none');
 	$('#timer').css('display', 'block');
 	$('.mdc-toolbar__title').text('Timer');
+	$('body').removeClass('top-align');
 });
 $('#stopwatch_tab').click(function() {
 	$('.tab-content').css('display', 'none');
 	$('#stopwatch').css('display', 'block');
 	$('.mdc-toolbar__title').text('Stopwatch');
+	$('body').removeClass('top-align');
 });
 $('#settings_tab').click(function() {
 	$('.tab-content').css('display', 'none');
 	$('#settings').css('display', 'block');
 	$('.mdc-toolbar__title').text('Settings');
+	$('body').addClass('top-align');
 });

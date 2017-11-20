@@ -1,18 +1,20 @@
-body {
+body, main {
 	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
-html, body {
-	height: 100%;
+.top-align {
+	justify-content: normal;
 }
 .tab-content {
 	text-align: center;
-}
-.mdc-tab-bar__indicator {
-	display: none;
 }
 .mdc-fab {
     position: fixed;
@@ -20,11 +22,21 @@ html, body {
     left: 50%;
 	transform: translateX(-50%);
 }
+#toolbar-tab-bar {
+	margin: 0 24px;
+}
+.mdc-tab {
+	padding: 20px 24px;
+	min-width: 72px;
+}
+.mdc-tab__icon {
+	vertical-align: middle;
+}
 #timer, #stopwatch, #settings {
 	display: none;
 }
 #time {
-	margin-bottom: 4px;
+	margin-bottom: 0.5rem;
 }
 #time_numeral {
 	letter-spacing: 0;
@@ -32,13 +44,9 @@ html, body {
 #date {
 	text-transform: uppercase;
 }
-#toolbar-tab-bar {
-	margin: 0 24px;
-}
 #settings {
 	text-align: left;
-    width: 98vw;
-    height: 85vh;
+    width: 95vw;
 }
 #settings .mdc-list-item__end-detail {
 	width: 48px;
@@ -58,5 +66,9 @@ html, body {
 	}
 	.mdc-tab {
 		width: 25%;
+		padding: 16px 12px;
+	}
+	#settings {
+    	width: 100vw;
 	}
 }

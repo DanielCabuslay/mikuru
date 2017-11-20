@@ -5,6 +5,7 @@ function update() {
 	}
 	if ($('#24h-switch').is(':checked')) {
 		timeFormat = 'H:' + timeFormat;
+		$('#time_ampm').html('');
 	} else {
 		timeFormat = 'h:' + timeFormat;
 		$('#time_ampm').html(moment().format('A'));

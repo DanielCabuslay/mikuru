@@ -9,11 +9,8 @@
   --mdc-theme-text-secondary-on-primary: rgba(0,0,0,0.7);
 }
 html {
-	background-color: var(--mdc-theme-primary);
+  background-color: #f5f5f5;
 }
 html, .mdc-list-item__text, .mdc-list-item__text__secondary {
 	color: var(--mdc-theme-text-primary-on-primary);
-}
-body {
-	background-color: #f5f5f5;
 }
