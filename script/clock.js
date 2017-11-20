@@ -1,4 +1,4 @@
-function update() {
+function clockUpdate() {
 	var timeFormat = 'mm';
 	if ($('#second-switch').is(':checked')) {
 		timeFormat += ':ss';
@@ -13,5 +13,5 @@ function update() {
 	$('#time_numeral').html(moment().format(timeFormat));
 	$('#date').html(moment().format('ddd, MMM D'));
 }
-update();
-setInterval(update, 1000);
+clockUpdate();
+setInterval(clockUpdate, 1000);

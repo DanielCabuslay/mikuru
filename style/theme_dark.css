@@ -10,9 +10,12 @@
 html {
 	background-color: var(--mdc-theme-primary);
 }
-html, .mdc-list-item__text, .mdc-list-item__text__secondary, .mdc-list-group__subheader {
+html, .mdc-list-item__text, .mdc-list-item__text__secondary {
 	color: var(--mdc-theme-text-primary-on-primary);
 }
 .mdc-list-divider {
 	border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+.mdc-list-group__subheader {
+  color: var(--mdc-theme-secondary);
 }

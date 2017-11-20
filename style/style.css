@@ -1,5 +1,6 @@
 body, main {
 	margin: 0;
+	width: 100vw;
 }
 html, body {
 	height: 100%;
@@ -9,6 +10,10 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+.mdc-toolbar--fixed {
+	box-shadow: none;
+	background-color: transparent;
 }
 .top-align {
 	justify-content: normal;
@@ -46,7 +51,6 @@ body {
 }
 #settings {
 	text-align: left;
-    width: 95vw;
 }
 #settings .mdc-list-item__end-detail {
 	width: 48px;
@@ -67,8 +71,5 @@ body {
 	.mdc-tab {
 		width: 25%;
 		padding: 16px 12px;
-	}
-	#settings {
-    	width: 100vw;
 	}
 }

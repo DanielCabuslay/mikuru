@@ -2,9 +2,9 @@
   --mdc-theme-primary: #03a9f4;
   --mdc-theme-primary-light: #67daff;
   --mdc-theme-primary-dark: #007ac1;
-  --mdc-theme-secondary: #ff6d00;
-  --mdc-theme-secondary-light: #ff9e40;
-  --mdc-theme-secondary-dark: #c43c00;
+  --mdc-theme-secondary: #0091ea;
+  --mdc-theme-secondary-light: #64c1ff;
+  --mdc-theme-secondary-dark: #0064b7;
   --mdc-theme-text-primary-on-primary: #000;
   --mdc-theme-text-secondary-on-primary: rgba(0,0,0,0.7);
 }
@@ -13,4 +13,7 @@ html {
 }
 html, .mdc-list-item__text, .mdc-list-item__text__secondary {
 	color: var(--mdc-theme-text-primary-on-primary);
+}
+.mdc-list-group__subheader {
+  color: var(--mdc-theme-secondary);
 }
