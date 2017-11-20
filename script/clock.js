@@ -1,6 +1,6 @@
 function clockUpdate() {
 	var timeFormat = 'mm';
-	if ($('#second-switch').is(':checked')) {
+	if ($('#second-clock-switch').is(':checked')) {
 		timeFormat += ':ss';
 	}
 	if ($('#24h-switch').is(':checked')) {

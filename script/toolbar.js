@@ -42,4 +42,5 @@ $('#settings_tab').click(function() {
 	$('#settings').css('display', 'block');
 	$('.mdc-toolbar__title').text('Settings');
 	$('body').addClass('top-align');
+	setTimeout(initInteractiveLists, 250);
 });

@@ -63,15 +63,17 @@
         <div id="timer" class="tab-content">
           <div id="countdown" class="mdc-typography--display4"></div><br>
           <div class="mdc-text-field mdc-typography--display1">
-            <input type="text" id="timer_textfield" class="mdc-text-field__input">
-            <label class="mdc-text-field__label" for="my-text-field">Time Limit</label>
+            <input type="text" id="timer_textfield" class="mdc-text-field__input" size="8">
             <div class="mdc-text-field__bottom-line"></div>
           </div>
-          <p class="mdc-text-field-helptext mdc-text-field-helptext--persistent mdc-text-field-helptext--validation-msg" id="pw-validation-msg">
-            30 = 30 sec.; 5:00 = 5 min.; 2:30:15 = 2 h 30 min. 15 sec.
+          <p class="mdc-text-field-helptext mdc-text-field-helptext--persistent mdc-text-field-helptext--validation-msg">
+            hh:mm:ss
           </p>
-          <button class="mdc-fab material-icons">
+          <button id="timer_play" class="mdc-fab material-icons">
           <span class="mdc-fab__icon">play_arrow</span>
+          </button>
+          <button id="timer_pause" class="mdc-fab material-icons">
+          <span class="mdc-fab__icon">pause</span>
           </button>
         </div>
         <div id="stopwatch" class="tab-content">
@@ -101,11 +103,28 @@
             <li class="mdc-list-item">
               <span class="mdc-list-item__text">
                 Show seconds
-                <span class="mdc-list-item__text__secondary">Show second count on clock</span>
+                <span class="mdc-list-item__text__secondary">Show seconds on clock</span>
               </span>
               <span class="mdc-list-item__end-detail">
                 <div class="mdc-switch">
-                  <input type="checkbox" id="second-switch" class="mdc-switch__native-control" />
+                  <input type="checkbox" id="second-clock-switch" class="mdc-switch__native-control" />
+                  <div class="mdc-switch__background">
+                    <div class="mdc-switch__knob"></div>
+                  </div>
+                </div>
+              </span>
+            </li>
+          </ul>
+          <h3 class="mdc-list-group__subheader">Timer</h3>
+          <ul class="mdc-list mdc-list--two-line">
+            <li class="mdc-list-item">
+              <span class="mdc-list-item__text">
+                Hide seconds on long timers
+                <span class="mdc-list-item__text__secondary">Hide seconds on timers longer than 10 minutes</span>
+              </span>
+              <span class="mdc-list-item__end-detail">
+                <div class="mdc-switch">
+                  <input type="checkbox" id="second-timer-switch" class="mdc-switch__native-control" />
                   <div class="mdc-switch__background">
                     <div class="mdc-switch__knob"></div>
                   </div>
