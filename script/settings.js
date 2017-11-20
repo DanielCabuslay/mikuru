@@ -10,6 +10,6 @@ $('#dark-switch').click(function() {
 		$("meta[name='theme-color']").attr('content', '#212121');
 	} else {
 		$('#theme').attr('href', 'style/theme_light.css');
-		$("meta[name='theme-color']").attr('content', '#03a9f4');
+		$("meta[name='theme-color']").attr('content', '#fafafa');
 	}
 });
