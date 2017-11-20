@@ -8,7 +8,7 @@
   --mdc-theme-text-secondary-on-secondary: #000;
 }
 html {
-	background-color: var(--mdc-theme-primary);
+	background-color: #202020;
 }
 html, .mdc-list-item__text, .mdc-list-item__text__secondary {
 	color: var(--mdc-theme-text-primary-on-primary);
@@ -18,4 +18,14 @@ html, .mdc-list-item__text, .mdc-list-item__text__secondary {
 }
 .mdc-list-group__subheader {
   color: var(--mdc-theme-secondary);
+}
+.mdc-text-field__input {
+  color: var(--mdc-theme-text-primary-on-primary);
+  border-bottom: 1px solid var(--mdc-theme-text-hint-on-secondary);
+}
+.mdc-text-field__input:hover {
+  border-bottom: 1px solid var(--mdc-theme-text-primary-on-secondary);
+}
+.mdc-text-field-helptext {
+  color: var(--mdc-theme-text-hint-on-secondary);
 }

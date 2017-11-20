@@ -51,6 +51,9 @@ body {
 #timer_textfield {
 	text-align: center;
 }
+.mdc-text-field__bottom-line {
+	background-color: var(--mdc-theme-secondary);
+}
 #timer_pause {
 	display: none;
 }
