@@ -12,7 +12,17 @@ body {
 	align-items: center;
 }
 .mdc-typography--display4 {
+	font-size: 12rem;
+	line-height: 12rem;
 	letter-spacing: 0;
+}
+.mdc-typography--display1 {
+	font-size: 4rem;
+	line-height: 4rem;
+}
+.mdc-typography--body1 {
+	font-size: 2rem;
+	line-height: 2rem;
 }
 .top-align {
 	justify-content: normal;
@@ -31,7 +41,8 @@ body {
 	white-space: nowrap;
 }
 .icon_button {
-	min-width: 36px;
+	min-width: 48px;
+	height: 48px;
     padding: 0;
     border-radius: 50%;
 }
@@ -70,6 +81,19 @@ body {
 	background-color: var(--mdc-theme-secondary);
 }
 @media (max-width: 599px) {
+	.mdc-typography--display4 {
+		font-size: 5rem;
+		line-height: 5rem;
+		letter-spacing: 0;
+	}
+	.mdc-typography--display1 {
+		font-size: 1.5rem;
+		line-height: 1.5rem;
+	}
+	.mdc-typography--body1 {
+		font-size: 1rem;
+		line-height: 1rem;
+	}
 	.mdc-toolbar__section--align-start {
 		display: none;
 	}

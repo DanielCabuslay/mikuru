@@ -1,6 +1,11 @@
 #time {
-	margin-bottom: 0.5rem;
+	margin-bottom: 2rem;
 }
 #date {
 	text-transform: uppercase;
+}
+@media (max-width: 599px) {
+	#time {
+		margin-bottom: 0.5rem;
+	}
 }

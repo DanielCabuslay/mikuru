@@ -13,9 +13,22 @@
 #timer_add_timer {
     left: 80%;
 }
+#countdown {
+	font-size: 10rem;
+	line-height: 10rem;
+}
 #countdown_clock button {
-	margin-top: 8px;
+	margin-top: 1rem;
 }
 #countdown_clock, #timer_pause, #timer_reset, #timer_add_time, #timer_stop, #timer_add_timer, #timer_delete {
 	display: none;
+}
+.mdc-button {
+	font-size: 1rem;
+	line-height: 1rem;
+}
+@media (max-width: 599px) {
+	#countdown_clock button {
+		margin-top: 0.5rem;
+	}
 }
