@@ -1,0 +1,21 @@
+#settings {
+	text-align: left;
+	width: 85vw;
+	margin: auto;
+}
+#settings .mdc-list-item {
+	cursor: pointer;
+}
+#settings .mdc-list-item__end-detail {
+	width: 48px;
+	height: 20px;
+}
+#settings .mdc-list-group__subheader {
+	padding-left: 16px;
+	margin-bottom: 0px;
+}
+@media (max-width: 599px) {
+	#settings {
+		width: 100vw;
+	}
+}

@@ -11,6 +11,9 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+.mdc-typography--display4 {
+	letter-spacing: 0;
+}
 .top-align {
 	justify-content: normal;
 }
@@ -22,6 +25,30 @@ body {
     bottom: 1.5rem;
     left: 50%;
 	transform: translateX(-50%);
+}
+.mdc-button:not(:disabled) {
+	color: var(--mdc-theme-text-primary-on-primary);
+	white-space: nowrap;
+}
+.icon_button {
+	min-width: 36px;
+    padding: 0;
+    border-radius: 50%;
+}
+.icon_button i {
+	vertical-align: middle;
+}
+.tab_circle_overlay {
+	display: none;
+	border: 2px solid var(--mdc-theme-primary);
+	border-radius: 50%;
+    background-color: var(--mdc-theme-secondary);
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 57%;
+    top: 55%;
 }
 #toolbar-tab-bar {
 	margin: 0 24px;
@@ -36,42 +63,11 @@ body {
 #timer, #stopwatch, #settings {
 	display: none;
 }
-#time {
-	margin-bottom: 0.5rem;
-}
-#time_numeral {
-	letter-spacing: 0;
-}
-#date {
-	text-transform: uppercase;
-}
-.active {
+.accent {
 	color: var(--mdc-theme-secondary);
-}
-#timer_textfield {
-	text-align: center;
 }
 .mdc-text-field__bottom-line {
 	background-color: var(--mdc-theme-secondary);
-}
-#timer_pause {
-	display: none;
-}
-#settings {
-	text-align: left;
-	width: 85vw;
-	margin: auto;
-}
-#settings .mdc-list-item {
-	cursor: pointer;
-}
-#settings .mdc-list-item__end-detail {
-	width: 48px;
-	height: 20px;
-}
-#settings .mdc-list-group__subheader {
-	padding-left: 16px;
-	margin-bottom: 0px;
 }
 @media (max-width: 599px) {
 	.mdc-toolbar__section--align-start {
@@ -84,8 +80,5 @@ body {
 	.mdc-tab {
 		width: 25%;
 		padding: 16px 12px;
-	}
-	#settings {
-		width: 100vw;
 	}
 }

@@ -11,6 +11,8 @@ function initInteractiveLists() {
 function settingsToggle(element) {
 	if (element.attr('id') == '24h-switch' || element.attr('id') == 'second-clock-switch') {
 		clockUpdate();		
+	} else if (element.attr('id') == 'second-timer-switch') {
+		updateCountdown();
 	} else if (element.attr('id') == 'dark-switch') {
 		if ($('#dark-switch').is(':checked')) {
 			$('#theme').attr('href', 'style/theme_dark.css');

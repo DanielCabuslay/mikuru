@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/clock.css">
+    <link rel="stylesheet" href="style/timer.css">
+    <link rel="stylesheet" href="style/settings.css">
     <link rel="stylesheet" id="theme" href="style/theme_light.css">
     <!-- <link rel="icon" type="image/png" href="/images/favicon/favicon.png"> -->
     <!-- <link rel="shortcut_icon" href="/images/favicon/favicon.png"> -->
@@ -33,10 +36,12 @@
             </a>
             <a class="mdc-tab mdc-tab--with-icon-and-text" id="timer_tab">
               <i class="material-icons mdc-tab__icon" aria-hidden="true">hourglass_empty</i>
+              <div class="tab_circle_overlay"></div>
               <!-- <span class="mdc-tab__icon-text">Timer</span> -->
             </a>
             <a class="mdc-tab mdc-tab--with-icon-and-text" id="stopwatch_tab">
               <i class="material-icons mdc-tab__icon" aria-hidden="true">timer</i>
+              <div class="tab_circle_overlay"></div>
               <!-- <span class="mdc-tab__icon-text">Stopwatch</span> -->
             </a>
             <a class="mdc-tab mdc-tab--with-icon-and-text" id="settings_tab">
@@ -56,12 +61,16 @@
             <span id="time_ampm" class="mdc-typography--display1"></span>
           </div>
           <div id="date" class="mdc-typography--body1"></div>
-          <button class="mdc-fab material-icons">
+          <!-- <button class="mdc-fab material-icons">
           <span class="mdc-fab__icon">public</span>
-          </button>
+          </button> -->
         </div>
         <div id="timer" class="tab-content">
-          <div id="countdown" class="mdc-typography--display4"></div><br>
+          <div id="countdown_clock">
+            <div id="countdown" class="mdc-typography--display4"></div>
+            <button id="timer_add_time" class="mdc-button">+1:00</button>
+            <button id="timer_reset" class="mdc-button">Reset</button>
+          </div>
           <div class="mdc-text-field mdc-typography--display1">
             <input type="text" id="timer_textfield" class="mdc-text-field__input" size="8">
             <div class="mdc-text-field__bottom-line"></div>
@@ -69,12 +78,19 @@
           <p class="mdc-text-field-helptext mdc-text-field-helptext--persistent mdc-text-field-helptext--validation-msg">
             hh:mm:ss
           </p>
+          <button id="timer_delete" class="mdc-button icon_button">
+            <i class="material-icons">delete</i>
+          </button>
           <button id="timer_play" class="mdc-fab material-icons">
           <span class="mdc-fab__icon">play_arrow</span>
           </button>
           <button id="timer_pause" class="mdc-fab material-icons">
           <span class="mdc-fab__icon">pause</span>
           </button>
+          <button id="timer_stop" class="mdc-fab material-icons">
+          <span class="mdc-fab__icon">stop</span>
+          </button>
+          <!-- <button id="timer_add_timer" class="mdc-button">Add Timer</button> -->
         </div>
         <div id="stopwatch" class="tab-content">
           Stopwatch
@@ -131,6 +147,21 @@
                 </div>
               </span>
             </li>
+            <!-- <hr class="mdc-list-divider">
+            <li class="mdc-list-item">
+              <span class="mdc-list-item__text">
+                Negative timers
+                <span class="mdc-list-item__text__secondary">Allow timers to count down past 0</span>
+              </span>
+              <span class="mdc-list-item__end-detail">
+                <div class="mdc-switch">
+                  <input type="checkbox" id="negative-timer-switch" class="mdc-switch__native-control" />
+                  <div class="mdc-switch__background">
+                    <div class="mdc-switch__knob"></div>
+                  </div>
+                </div>
+              </span>
+            </li> -->
           </ul>
           <h3 class="mdc-list-group__subheader">Visual</h3>
           <ul class="mdc-list mdc-list--two-line">

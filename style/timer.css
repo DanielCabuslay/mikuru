@@ -1,0 +1,21 @@
+#timer_textfield {
+	text-align: center;
+}
+#timer_delete, #timer_add_timer {
+	position: fixed;
+    bottom: 1.75rem;
+    transform: translateX(-50%);	
+}
+#timer_delete {
+	left: 50%;
+	bottom: 6rem;
+}
+#timer_add_timer {
+    left: 80%;
+}
+#countdown_clock button {
+	margin-top: 8px;
+}
+#countdown_clock, #timer_pause, #timer_reset, #timer_add_time, #timer_stop, #timer_add_timer, #timer_delete {
+	display: none;
+}
