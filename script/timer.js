@@ -1,7 +1,7 @@
 var totalSeconds = 0;
 var originalTimer = 0;
 var timerActive = false;
-var timerAlarm = new Audio('/media/timer_expire.ogg');
+var timerAlarm = new Audio('../media/timer_expire.ogg');
 var timer; // interval variable
 var blinkInterval;
 
