@@ -26,7 +26,7 @@ function timerDisplay(centiseconds) {
 	} if (centiseconds < 6000 && centiseconds >= 1000) { // 59s-10s
 		if ($('#second-timer-switch').is(':checked')) 
 			return 'ss.S';
-		return 'ss.S';
+		return 'ss';
 	}
 	if ($('#second-timer-switch').is(':checked')) 
 		return 's.S';
