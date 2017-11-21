@@ -11,20 +11,26 @@ timerAlarm.addEventListener('ended', function() {
 }, false);
 
 function timerDisplay(centiseconds) {
-	if (centiseconds >= 360000) {
+	if (centiseconds >= 360000) { // >1h
 		if ($('#second-timer-switch').is(':checked')) 
-			return moment.duration(centiseconds * 10000).hours() + ':mm';
-		return moment.duration(centiseconds * 10000).hours() + ':mm:ss';
-	} if (centiseconds < 360000 && centiseconds >= 60000) {
+			return moment.duration(centiseconds * 10).hours() + ':mm:ss.S';
+		return moment.duration(centiseconds * 10).hours() + ':mm:ss';
+	} if (centiseconds < 360000 && centiseconds >= 60000) { //59m59s-10m
 		if ($('#second-timer-switch').is(':checked')) 
-			return '0:mm';
+			return 'mm:ss.S';
 		return 'mm:ss';
-	} if (centiseconds < 60000 && centiseconds >= 6000) {
+	} if (centiseconds < 60000 && centiseconds >= 6000) { //9m59s-1m
+		if ($('#second-timer-switch').is(':checked')) 
+			return 'm:ss.S';
 		return 'm:ss';
-	} if (centiseconds < 6000 && centiseconds >= 1000) {
+	} if (centiseconds < 6000 && centiseconds >= 1000) { // 59s-10s
+		if ($('#second-timer-switch').is(':checked')) 
+			return 'ss.S';
 		return 'ss.S';
 	}
-	return 's.S';
+	if ($('#second-timer-switch').is(':checked')) 
+		return 's.S';
+	return 's'; // 9.9s-0.0s
 }
 
 function timerBlink() {
