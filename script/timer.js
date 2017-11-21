@@ -120,7 +120,7 @@ $('#timer_stop').click(function() {
 });
 
 $('#timer_add_time').click(function() {
-	totalCentiseconds += 60;
+	totalCentiseconds += 6000;
 	updateCountdown();
 	if (!timerActive) {
 		$('#countdown').removeClass('accent');
