@@ -8,7 +8,7 @@
 }
 #timer_delete {
 	left: 50%;
-	bottom: 6rem;
+	bottom: 5.5rem;
 }
 #timer_add_timer {
     left: 80%;
@@ -16,9 +16,21 @@
 #countdown {
 	font-size: 10rem;
 	line-height: 10rem;
+	margin-top: 3.5rem;
+}
+#countdown_clock {
+	display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 4px solid var(--mdc-theme-text-secondary-on-primary);
+    border-radius: 50%;
+    height: 30rem;
+    width: 30rem;
+    margin: auto;
+    justify-content: center;
 }
 #countdown_clock button {
-	margin-top: 1rem;
+	margin: 1rem auto;
 }
 #countdown_clock, #timer_pause, #timer_reset, #timer_add_time, #timer_stop, #timer_add_timer, #timer_delete {
 	display: none;
@@ -31,8 +43,17 @@
 	#countdown {
 		font-size: 5rem;
 		line-height: 5rem;
+		margin-top: 2.5rem;
+	}
+	#countdown_clock {
+		height: 16rem;
+		width: 16rem;
 	}
 	#countdown_clock button {
-		margin-top: 0.5rem;
+		margin: 0.5rem auto;
+	}
+	.mdc-button {
+		font-size: .875rem;
+		line-height: 2.25rem;
 	}
 }

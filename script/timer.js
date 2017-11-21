@@ -84,7 +84,8 @@ $('#timer_play').click(function() {
 		originalTimer = totalCentiseconds;
 	}
 	if (totalCentiseconds > 0) {
-		$('#timer_tab .tab_circle_overlay, #countdown_clock').css('display', 'block');
+		$('#timer_tab .tab_circle_overlay').css('display', 'block');
+		$('#countdown_clock').css('display', 'flex');
 		timerActive = true;
 		updateCountdown();
 		$('#timer_play, #timer_reset, #timer .mdc-text-field, .mdc-text-field-helptext').css('display', 'none');
