@@ -5,6 +5,11 @@ var timerAlarm = new Audio('media/timer_expire.ogg');
 var timer; // interval variable
 var blinkInterval;
 
+timerAlarm.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+
 function timerDisplay(centiseconds) {
 	if (centiseconds >= 360000) {
 		if ($('#second-timer-switch').is(':checked')) 
@@ -44,7 +49,7 @@ function stopCountdown() {
 	$('#countdown').addClass('accent');
 	$('#timer_pause').css('display', 'none');
 	$('#timer_stop').css('display', 'inline-block');
-	blinkInterval = setInterval(timerBlink, 750);
+	blinkInterval = setInterval(timerBlink, 500);
 }
 
 function countdown() {
@@ -84,13 +89,14 @@ $('#timer_play').click(function() {
 
 $('#timer_pause').click(function() {
 	clearInterval(timer);
-	blinkInterval = setInterval(timerBlink, 750);
+	blinkInterval = setInterval(timerBlink, 500);
 	$('#timer_pause, #timer_add_time').css('display', 'none');
 	$('#timer_play, #timer_reset').css('display', 'inline-block');
 });
 
 $('#timer_delete').click(function() {
 	timerAlarm.pause();
+	timerAlarm.currentTime = 0;
 	clearInterval(timer);
 	stopBlinking();
 	$('#countdown').removeClass('accent');
@@ -110,6 +116,7 @@ $('#timer_reset').click(function() {
 
 $('#timer_stop').click(function() {
 	timerAlarm.pause();
+	timerAlarm.currentTime = 0;
 	clearInterval(timer);
 	stopBlinking();
 	$('#countdown').removeClass('accent');
@@ -120,6 +127,9 @@ $('#timer_stop').click(function() {
 });
 
 $('#timer_add_time').click(function() {
+	timerAlarm.pause();
+	timerAlarm.currentTime = 0;
+	stopBlinking();
 	totalCentiseconds += 6000;
 	updateCountdown();
 	if (!timerActive) {

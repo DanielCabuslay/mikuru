@@ -28,6 +28,10 @@
 	line-height: 1rem;
 }
 @media (max-width: 599px) {
+	#countdown {
+		font-size: 5rem;
+		line-height: 5rem;
+	}
 	#countdown_clock button {
 		margin-top: 0.5rem;
 	}
