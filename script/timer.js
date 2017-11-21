@@ -1,25 +1,25 @@
-var totalSeconds = 0;
+var totalCentiseconds = 0;
 var originalTimer = 0;
 var timerActive = false;
 var timerAlarm = new Audio('media/timer_expire.ogg');
 var timer; // interval variable
 var blinkInterval;
 
-function timerDisplay(seconds) {
-	if (seconds >= 3600) {
+function timerDisplay(centiseconds) {
+	if (centiseconds >= 360000) {
 		if ($('#second-timer-switch').is(':checked')) 
-			return moment.duration(seconds * 1000).hours() + ':mm';
-		return moment.duration(seconds * 1000).hours() + ':mm:ss';
-	} if (seconds < 3600 && seconds >= 600) {
+			return moment.duration(centiseconds * 10000).hours() + ':mm';
+		return moment.duration(centiseconds * 10000).hours() + ':mm:ss';
+	} if (centiseconds < 360000 && centiseconds >= 60000) {
 		if ($('#second-timer-switch').is(':checked')) 
 			return '0:mm';
 		return 'mm:ss';
-	} if (seconds < 600 && seconds >= 60) {
+	} if (centiseconds < 60000 && centiseconds >= 6000) {
 		return 'm:ss';
-	} if (seconds < 60 && seconds >= 10) {
-		return 'ss';
+	} if (centiseconds < 6000 && centiseconds >= 1000) {
+		return 'ss.S';
 	}
-	return 's';
+	return 's.S';
 }
 
 function timerBlink() {
@@ -35,8 +35,8 @@ function stopBlinking() {
 }
 
 function updateCountdown() {
-	timeDisplay = moment.duration(totalSeconds * 1000);
-	$('#countdown').text(moment(timeDisplay.asMilliseconds()).format(timerDisplay(totalSeconds)));	
+	timeDisplay = moment.duration(totalCentiseconds * 10);
+	$('#countdown').text(moment(timeDisplay.asMilliseconds()).format(timerDisplay(totalCentiseconds)));	
 }
 
 function stopCountdown() {
@@ -48,8 +48,8 @@ function stopCountdown() {
 }
 
 function countdown() {
-	if (totalSeconds > 0) {
-		totalSeconds -= 1;
+	if (totalCentiseconds > 0) {
+		totalCentiseconds -= 1;
 		updateCountdown();
 	} else {
 		timerActive = false;
@@ -65,19 +65,20 @@ $('#timer_play').click(function() {
 		var time = $('#timer_textfield').val();
 		var timeSplit = time.split(':').reverse();
 		//TODO: do regex check for proper format
-		totalSeconds = 0;
+		var totalSeconds = 0;
 		for (i = 0; i < timeSplit.length; i++) {
 			totalSeconds += timeSplit[i] * Math.pow(60, i);
 		}
-		originalTimer = totalSeconds;
+		totalCentiseconds = totalSeconds * 100;
+		originalTimer = totalCentiseconds;
 	}
-	if (totalSeconds > 0) {
+	if (totalCentiseconds > 0) {
 		$('#timer_tab .tab_circle_overlay, #countdown_clock').css('display', 'block');
 		timerActive = true;
 		updateCountdown();
 		$('#timer_play, #timer_reset, #timer .mdc-text-field, .mdc-text-field-helptext').css('display', 'none');
 		$('#timer_pause, #timer_add_time, #timer_delete, #timer_add_timer').css('display', 'inline-block');
-		timer = setInterval(countdown, 1000);
+		timer = setInterval(countdown, 10);
 	} 
 });
 
@@ -102,7 +103,7 @@ $('#timer_delete').click(function() {
 });
 
 $('#timer_reset').click(function() {
-	totalSeconds = originalTimer;
+	totalCentiseconds = originalTimer;
 	updateCountdown();
 	stopBlinking();
 });
@@ -114,19 +115,19 @@ $('#timer_stop').click(function() {
 	$('#countdown').removeClass('accent');
 	$('#timer_tab .tab_circle_overlay, #timer_stop, #timer_add_time').css('display', 'none');
 	$('#timer_play, #timer_reset').css('display', 'inline-block');
-	totalSeconds = originalTimer;
+	totalCentiseconds = originalTimer;
 	updateCountdown();
 });
 
 $('#timer_add_time').click(function() {
-	totalSeconds += 60;
+	totalCentiseconds += 60;
 	updateCountdown();
 	if (!timerActive) {
 		$('#countdown').removeClass('accent');
 		$('#timer_stop').css('display', 'none');
 		$('#timer_pause').css('display', 'inline-block');
 		timerActive = true;
-		timer = setInterval(countdown, 1000);
+		timer = setInterval(countdown, 10);
 	}
 });
 
