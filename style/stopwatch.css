@@ -24,7 +24,7 @@
     align-items: center;
 }
 #stopwatch_fractional {
-	margin-top: 48px;
+	margin-top: 37px;
 }
 @media (max-width: 599px) {
 	#stopwatch_clock {
@@ -36,6 +36,6 @@
 	}
 	#stopwatch_fractional {
 		font-size: 2.25rem;
-		margin-top: 34px;
+		margin-top: 17px;
 	}
 }

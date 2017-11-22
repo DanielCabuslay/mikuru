@@ -47,6 +47,8 @@ function timerBlinkStop() {
 
 function updateCountdown() {
 	timeDisplay = moment.duration(timerCentiseconds * 10);
+	if (!$('#second-timer-switch').is(':checked') && timerCentiseconds > 0 && timerActive) 
+		timeDisplay = moment.duration((timerCentiseconds + 99) * 10); 
 	$('#countdown').text(moment(timeDisplay.asMilliseconds()).format(timerDisplay(timerCentiseconds)));	
 }
 
@@ -80,7 +82,6 @@ $('#timer_play').click(function() {
 	if (!timerActive) {
 		var time = $('#timer_textfield').val();
 		var timeSplit = time.split(':').reverse();
-		//TODO: do regex check for proper format
 		var totalSeconds = 0;
 		for (i = 0; i < timeSplit.length; i++) {
 			totalSeconds += timeSplit[i] * Math.pow(60, i);

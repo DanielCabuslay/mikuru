@@ -12,8 +12,6 @@ body {
 	align-items: center;
 }
 .mdc-typography--display4 {
-	font-size: 8rem;
-	line-height: 8rem;
 	letter-spacing: 0;
 }
 .mdc-typography--display1 {
@@ -71,6 +69,9 @@ body {
 .mdc-tab__icon {
 	vertical-align: middle;
 }
+.mdc-list-item {
+	white-space: normal;
+}
 #timer, #stopwatch, #settings {
 	display: none;
 }
@@ -82,8 +83,8 @@ body {
 }
 @media (max-width: 599px) {
 	.mdc-typography--display4 {
-		font-size: 5rem;
-		line-height: 5rem;
+		font-size: 3.75rem;
+		line-height: 3.75rem;
 		letter-spacing: 0;
 	}
 	.mdc-typography--display1 {
