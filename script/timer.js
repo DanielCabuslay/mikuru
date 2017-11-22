@@ -89,7 +89,7 @@ $('#timer_play').click(function() {
 		timerCentiseconds = totalSeconds * 100;
 		originalTimer = timerCentiseconds;
 	}
-	if (timerCentiseconds > 0) {
+	if (timerCentiseconds < 8640000 && timerCentiseconds > 0) {
 		$('#timer_tab .tab_circle_overlay').css('display', 'block');
 		$('#countdown_clock').css('display', 'flex');
 		timerActive = true;
@@ -97,7 +97,9 @@ $('#timer_play').click(function() {
 		$('#timer_play, #timer_reset, #timer .mdc-text-field, .mdc-text-field-helptext').css('display', 'none');
 		$('#timer_pause, #timer_add_time, #timer_delete, #timer_add_timer').css('display', 'inline-block');
 		timer = setInterval(countdown, 10);
-	} 
+	} else {
+		timerInvalidInput();
+	}
 });
 
 $('#timer_pause').click(function() {
