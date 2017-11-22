@@ -14,8 +14,6 @@
     left: 80%;
 }
 #countdown {
-	font-size: 10rem;
-	line-height: 10rem;
 	margin-top: 3.5rem;
 }
 #countdown_clock {
@@ -41,8 +39,6 @@
 }
 @media (max-width: 599px) {
 	#countdown {
-		font-size: 5rem;
-		line-height: 5rem;
 		margin-top: 2.5rem;
 	}
 	#countdown_clock {

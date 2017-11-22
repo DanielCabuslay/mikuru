@@ -1,0 +1,41 @@
+#stopwatch_time {
+	margin-right: 8px;
+}
+#stopwatch_pause {
+	display: none;
+}
+#stopwatch_reset {
+	display: none;
+	position: fixed;
+    transform: translateX(-50%);		
+	left: 50%;
+	bottom: 5.5rem;
+}
+#stopwatch_clock {
+	display: flex;
+    flex-direction: row;
+    position: relative;
+    border: 4px solid var(--mdc-theme-text-secondary-on-primary);
+    border-radius: 50%;
+    height: 30rem;
+    width: 30rem;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+#stopwatch_fractional {
+	margin-top: 48px;
+}
+@media (max-width: 599px) {
+	#stopwatch_clock {
+		height: 16rem;
+		width: 16rem;
+	}
+	#stopwatch_clock button {
+		margin: 0.5rem auto;
+	}
+	#stopwatch_fractional {
+		font-size: 2.25rem;
+		margin-top: 34px;
+	}
+}

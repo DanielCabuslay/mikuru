@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/clock.css">
     <link rel="stylesheet" href="style/timer.css">
+    <link rel="stylesheet" href="style/stopwatch.css">
     <link rel="stylesheet" href="style/settings.css">
     <link rel="stylesheet" id="theme" href="style/theme_light.css">
     <link rel="manifest" href="manifest.json">
@@ -70,7 +71,7 @@
             <button id="timer_reset" class="mdc-button">Reset</button>
           </div>
           <div class="mdc-text-field mdc-typography--display1">
-            <input type="text" id="timer_textfield" class="mdc-text-field__input" size="8">
+            <input pattern="\d\d:\d\d:\d\d|\d:\d\d:\d\d|\d\d:\d\d|\d:\d\d|\d?\d" oninvalid="timerInvalidInput();" type="text" id="timer_textfield" class="mdc-text-field__input" size="8" maxlength="8">
             <div class="mdc-text-field__bottom-line"></div>
           </div>
           <p class="mdc-text-field-helptext mdc-text-field-helptext--persistent mdc-text-field-helptext--validation-msg">
@@ -91,9 +92,18 @@
           <!-- <button id="timer_add_timer" class="mdc-button">Add Timer</button> -->
         </div>
         <div id="stopwatch" class="tab-content">
-          Stopwatch
-          <button class="mdc-fab material-icons">
+          <div id="stopwatch_clock">
+            <span id="stopwatch_time" class="mdc-typography--display4">0</span>
+            <span id="stopwatch_fractional" class="mdc-typography--display1">00</span>
+          </div>
+          <button id="stopwatch_reset" class="mdc-button icon_button">
+            <i class="material-icons">replay</i>
+          </button>
+          <button id="stopwatch_play" class="mdc-fab material-icons">
           <span class="mdc-fab__icon">play_arrow</span>
+          </button>
+          <button id="stopwatch_pause" class="mdc-fab material-icons">
+          <span class="mdc-fab__icon">pause</span>
           </button>
         </div>
         <div id="settings" class="tab-content">
@@ -203,6 +213,7 @@
   <script src="https://unpkg.com/material-components-web@0.25.0/dist/material-components-web.min.js"></script>
   <script src="script/clock.js"></script>
   <script src="script/timer.js"></script>
+  <script src="script/stopwatch.js"></script>
   <script src="script/toolbar.js"></script>
   <script src="script/settings.js"></script>
 </html>

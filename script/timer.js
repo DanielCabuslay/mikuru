@@ -1,9 +1,9 @@
-var totalCentiseconds = 0;
+var timerCentiseconds = 0;
 var originalTimer = 0;
 var timerActive = false;
 var timerAlarm = new Audio('media/timer_expire.ogg');
 var timer; // interval variable
-var blinkInterval;
+var timerBlinkInterval;
 
 timerAlarm.addEventListener('ended', function() {
     this.currentTime = 0;
@@ -40,14 +40,14 @@ function timerBlink() {
 		$('#countdown').css('visibility', 'visible');
 	}
 }
-function stopBlinking() {
-	clearInterval(blinkInterval);
+function timerBlinkStop() {
+	clearInterval(timerBlinkInterval);
 	$('#countdown').css('visibility', 'visible');
 }
 
 function updateCountdown() {
-	timeDisplay = moment.duration(totalCentiseconds * 10);
-	$('#countdown').text(moment(timeDisplay.asMilliseconds()).format(timerDisplay(totalCentiseconds)));	
+	timeDisplay = moment.duration(timerCentiseconds * 10);
+	$('#countdown').text(moment(timeDisplay.asMilliseconds()).format(timerDisplay(timerCentiseconds)));	
 }
 
 function stopCountdown() {
@@ -55,12 +55,12 @@ function stopCountdown() {
 	$('#countdown').addClass('accent');
 	$('#timer_pause').css('display', 'none');
 	$('#timer_stop').css('display', 'inline-block');
-	blinkInterval = setInterval(timerBlink, 500);
+	timerBlinkInterval = setInterval(timerBlink, 500);
 }
 
 function countdown() {
-	if (totalCentiseconds > 0) {
-		totalCentiseconds -= 1;
+	if (timerCentiseconds > 0) {
+		timerCentiseconds -= 1;
 		updateCountdown();
 	} else {
 		timerActive = false;
@@ -70,8 +70,13 @@ function countdown() {
 	}
 }
 
+function timerInvalidInput() {
+	$('#timer .mdc-text-field input').val('');
+	$('#timer .mdc-text-field-helptext').text('Invalid input. hh:mm:ss');
+}
+
 $('#timer_play').click(function() {
-	stopBlinking();
+	timerBlinkStop();
 	if (!timerActive) {
 		var time = $('#timer_textfield').val();
 		var timeSplit = time.split(':').reverse();
@@ -80,10 +85,10 @@ $('#timer_play').click(function() {
 		for (i = 0; i < timeSplit.length; i++) {
 			totalSeconds += timeSplit[i] * Math.pow(60, i);
 		}
-		totalCentiseconds = totalSeconds * 100;
-		originalTimer = totalCentiseconds;
+		timerCentiseconds = totalSeconds * 100;
+		originalTimer = timerCentiseconds;
 	}
-	if (totalCentiseconds > 0) {
+	if (timerCentiseconds > 0) {
 		$('#timer_tab .tab_circle_overlay').css('display', 'block');
 		$('#countdown_clock').css('display', 'flex');
 		timerActive = true;
@@ -96,7 +101,7 @@ $('#timer_play').click(function() {
 
 $('#timer_pause').click(function() {
 	clearInterval(timer);
-	blinkInterval = setInterval(timerBlink, 500);
+	timerBlinkInterval = setInterval(timerBlink, 500);
 	$('#timer_pause, #timer_add_time').css('display', 'none');
 	$('#timer_play, #timer_reset').css('display', 'inline-block');
 });
@@ -105,7 +110,7 @@ $('#timer_delete').click(function() {
 	timerAlarm.pause();
 	timerAlarm.currentTime = 0;
 	clearInterval(timer);
-	stopBlinking();
+	timerBlinkStop();
 	$('#countdown').removeClass('accent');
 	$('#timer_play').css('display', 'inline-block');
 	$('#timer .mdc-text-field').css('display', 'inline-flex');
@@ -113,31 +118,32 @@ $('#timer_delete').click(function() {
 	$('#timer_tab .tab_circle_overlay, #countdown_clock, #timer_stop, #timer_pause, #timer_delete, #timer_add_timer').css('display', 'none');
 	timerActive = false;
 	$('#timer .mdc-text-field input').val('');
+	$('#timer .mdc-text-field-helptext').text('hh:mm:ss');
 });
 
 $('#timer_reset').click(function() {
-	totalCentiseconds = originalTimer;
+	timerCentiseconds = originalTimer;
 	updateCountdown();
-	stopBlinking();
+	timerBlinkStop();
 });
 
 $('#timer_stop').click(function() {
 	timerAlarm.pause();
 	timerAlarm.currentTime = 0;
 	clearInterval(timer);
-	stopBlinking();
+	timerBlinkStop();
 	$('#countdown').removeClass('accent');
 	$('#timer_tab .tab_circle_overlay, #timer_stop, #timer_add_time').css('display', 'none');
 	$('#timer_play, #timer_reset').css('display', 'inline-block');
-	totalCentiseconds = originalTimer;
+	timerCentiseconds = originalTimer;
 	updateCountdown();
 });
 
 $('#timer_add_time').click(function() {
 	timerAlarm.pause();
 	timerAlarm.currentTime = 0;
-	stopBlinking();
-	totalCentiseconds += 6000;
+	timerBlinkStop();
+	timerCentiseconds += 6000;
 	updateCountdown();
 	if (!timerActive) {
 		$('#countdown').removeClass('accent');
