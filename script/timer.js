@@ -47,8 +47,6 @@ function timerBlinkStop() {
 
 function updateCountdown() {
 	timeDisplay = moment.duration(timerCentiseconds * 10);
-	if (!$('#second-timer-switch').is(':checked') && timerCentiseconds > 0 && timerActive) 
-		timeDisplay = moment.duration((timerCentiseconds + 99) * 10); 
 	$('#countdown').text(moment(timeDisplay.asMilliseconds()).format(timerDisplay(timerCentiseconds)));	
 }
 
