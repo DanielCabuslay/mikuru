@@ -48,6 +48,10 @@ Various settings can be adjusted in this tab:
 * [Moment.js](https://momentjs.com/)
 
 ## Changelog
+* v1.0.1 (January 28, 2018)
+	* Added ability to press enter for timer submissions
+	* Added transition between themes
+	* Various CSS adjustments
 * v1.0.0 (November 22, 2017)
 	* Initial release
 
