@@ -45,6 +45,31 @@ function timerBlinkStop() {
 	$('#countdown').css('visibility', 'visible');
 }
 
+function prepareCountdown() {
+	timerBlinkStop();
+	if (!timerActive) {
+		var time = $('#timer_textfield').val();
+		var timeSplit = time.split(':').reverse();
+		var totalSeconds = 0;
+		for (i = 0; i < timeSplit.length; i++) {
+			totalSeconds += timeSplit[i] * Math.pow(60, i);
+		}
+		timerCentiseconds = totalSeconds * 100;
+		originalTimer = timerCentiseconds;
+	}
+	if (timerCentiseconds < 8640000 && timerCentiseconds > 0) {
+		$('#timer_tab .tab_circle_overlay').css('display', 'block');
+		$('#countdown_clock').css('display', 'flex');
+		timerActive = true;
+		updateCountdown();
+		$('#timer_play, #timer_reset, #timer .mdc-text-field, .mdc-text-field-helptext').css('display', 'none');
+		$('#timer_pause, #timer_add_time, #timer_delete, #timer_add_timer').css('display', 'inline-block');
+		timer = setInterval(countdown, 10);
+	} else {
+		timerInvalidInput();
+	}
+}
+
 function updateCountdown() {
 	timeDisplay = moment.duration(timerCentiseconds * 10);
 	$('#countdown').text(moment(timeDisplay.asMilliseconds()).format(timerDisplay(timerCentiseconds)));	
@@ -75,29 +100,13 @@ function timerInvalidInput() {
 	$('#timer .mdc-text-field-helptext').text('Invalid input. hh:mm:ss');
 }
 
+$('#timer form').submit(function(event) {
+	event.preventDefault();
+	prepareCountdown();
+});
+
 $('#timer_play').click(function() {
-	timerBlinkStop();
-	if (!timerActive) {
-		var time = $('#timer_textfield').val();
-		var timeSplit = time.split(':').reverse();
-		var totalSeconds = 0;
-		for (i = 0; i < timeSplit.length; i++) {
-			totalSeconds += timeSplit[i] * Math.pow(60, i);
-		}
-		timerCentiseconds = totalSeconds * 100;
-		originalTimer = timerCentiseconds;
-	}
-	if (timerCentiseconds < 8640000 && timerCentiseconds > 0) {
-		$('#timer_tab .tab_circle_overlay').css('display', 'block');
-		$('#countdown_clock').css('display', 'flex');
-		timerActive = true;
-		updateCountdown();
-		$('#timer_play, #timer_reset, #timer .mdc-text-field, .mdc-text-field-helptext').css('display', 'none');
-		$('#timer_pause, #timer_add_time, #timer_delete, #timer_add_timer').css('display', 'inline-block');
-		timer = setInterval(countdown, 10);
-	} else {
-		timerInvalidInput();
-	}
+	prepareCountdown();
 });
 
 $('#timer_pause').click(function() {

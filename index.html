@@ -64,14 +64,16 @@
             <button id="timer_reset" class="mdc-button">Reset</button>
           </div>
           <div class="mdc-text-field mdc-typography--display1">
-            <input pattern="\d\d:\d\d:\d\d|\d:\d\d:\d\d|\d\d:\d\d|\d:\d\d|\d?\d" oninvalid="timerInvalidInput();" type="text" id="timer_textfield" class="mdc-text-field__input" size="8" maxlength="8">
-            <div class="mdc-text-field__bottom-line"></div>
+            <form autocomplete="off">
+              <input pattern="\d\d:\d\d:\d\d|\d:\d\d:\d\d|\d\d:\d\d|\d:\d\d|\d?\d" oninvalid="timerInvalidInput();" type="text" id="timer_textfield" class="mdc-text-field__input" size="8" maxlength="8">
+              <div class="mdc-text-field__bottom-line"></div>
+            </form>
           </div>
           <p class="mdc-text-field-helptext mdc-text-field-helptext--persistent mdc-text-field-helptext--validation-msg">
             hh:mm:ss
           </p>
           <button id="timer_delete" class="mdc-button icon_button">
-            <i class="material-icons">delete</i>
+          <i class="material-icons">delete</i>
           </button>
           <button id="timer_play" class="mdc-fab material-icons">
           <span class="mdc-fab__icon">play_arrow</span>
@@ -85,11 +87,13 @@
         </div>
         <div id="stopwatch" class="tab-content">
           <div id="stopwatch_clock">
-            <span id="stopwatch_time" class="mdc-typography--display4">0</span>
-            <span id="stopwatch_fractional" class="mdc-typography--display1">00</span>
+            <div id="stopwatch_display">
+              <span id="stopwatch_time" class="mdc-typography--display4">0</span>
+              <span id="stopwatch_fractional" class="mdc-typography--display4">00</span>
+            </div>
           </div>
           <button id="stopwatch_reset" class="mdc-button icon_button">
-            <i class="material-icons">replay</i>
+          <i class="material-icons">replay</i>
           </button>
           <button id="stopwatch_play" class="mdc-fab material-icons">
           <span class="mdc-fab__icon">play_arrow</span>
@@ -185,7 +189,7 @@
             <li class="mdc-list-item">
               <span class="mdc-list-item__text">
                 Version
-                <span class="mdc-list-item__text__secondary">1.0.0</span>
+                <span class="mdc-list-item__text__secondary">1.0.1</span>
               </span>
             </li>
             <hr class="mdc-list-divider">

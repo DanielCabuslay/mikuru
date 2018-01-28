@@ -3,29 +3,29 @@
 }
 #timer_delete, #timer_add_timer {
 	position: fixed;
-    bottom: 1.75rem;
-    transform: translateX(-50%);	
+  bottom: 1.75rem;
+  transform: translateX(-50%);	
 }
 #timer_delete {
 	left: 50%;
 	bottom: 5.5rem;
 }
 #timer_add_timer {
-    left: 80%;
+  left: 80%;
 }
 #countdown {
 	margin-top: 3.5rem;
 }
 #countdown_clock {
 	display: flex;
-    flex-direction: column;
-    position: relative;
-    border: 4px solid var(--mdc-theme-text-secondary-on-primary);
-    border-radius: 50%;
-    height: 30rem;
-    width: 30rem;
-    margin: auto;
-    justify-content: center;
+  flex-direction: column;
+  position: relative;
+  border: 4px solid var(--mdc-theme-text-secondary-on-primary);
+  border-radius: 50%;
+  height: 23rem;
+  width: 23rem;
+  margin: auto;
+  justify-content: center;
 }
 #countdown_clock button {
 	margin: 1rem auto;
