@@ -1,9 +1,9 @@
 function clockUpdate() {
 	var timeFormat = 'mm';
-	if ($('#second-clock-switch').is(':checked')) {
+	if (localStorage.getItem('mikuru-clock-seconds') == 'true') {
 		timeFormat += ':ss';
 	}
-	if ($('#24h-switch').is(':checked')) {
+	if (localStorage.getItem('mikuru-clock-24h') == 'true') {
 		timeFormat = 'H:' + timeFormat;
 		$('#time_ampm').html('');
 	} else {

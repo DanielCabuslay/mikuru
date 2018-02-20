@@ -1,24 +1,18 @@
-#stopwatch_pause {
+#stopwatch_pause, #stopwatch_reset {
 	display: none;
 }
 #stopwatch_reset {
-	display: none;
 	position: fixed;
-   transform: translateX(-50%);		
+   	transform: translateX(-50%);		
 	left: 50%;
 	bottom: 5.5rem;
 }
 #stopwatch_clock {
-	display: flex;
-  flex-direction: row;
-  position: relative;
-  border: 4px solid var(--mdc-theme-text-secondary-on-primary);
-  border-radius: 50%;
-  height: 23rem;
-  width: 23em;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
+	flex-direction: row;
+	align-items: center;
+}
+#stopwatch_fractional {
+	font-size: 4.5rem;
 }
 @media (max-width: 599px) {
 	#stopwatch_clock {

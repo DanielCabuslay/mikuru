@@ -53,12 +53,12 @@
         <div id="clock" class="tab-content">
           <div id="time">
             <span id="time_numeral" class="mdc-typography--display4"></span>
-            <span id="time_ampm" class="mdc-typography--display1"></span>
+            <span id="time_ampm" class="mdc-typography--display4"></span>
           </div>
           <div id="date" class="mdc-typography--body1"></div>
         </div>
         <div id="timer" class="tab-content">
-          <div id="countdown_clock">
+          <div class="circle" id="countdown_clock">
             <div id="countdown" class="mdc-typography--display4"></div>
             <button id="timer_add_time" class="mdc-button">+1:00</button>
             <button id="timer_reset" class="mdc-button">Reset</button>
@@ -86,10 +86,10 @@
           </button>
         </div>
         <div id="stopwatch" class="tab-content">
-          <div id="stopwatch_clock">
+          <div class="circle" id="stopwatch_clock">
             <div id="stopwatch_display">
               <span id="stopwatch_time" class="mdc-typography--display4">0</span>
-              <span id="stopwatch_fractional" class="mdc-typography--display1">00</span>
+              <span id="stopwatch_fractional" class="mdc-typography--display4">00</span>
             </div>
           </div>
           <button id="stopwatch_reset" class="mdc-button icon_button">
@@ -144,7 +144,7 @@
               </span>
               <span class="mdc-list-item__end-detail">
                 <div class="mdc-switch">
-                  <input type="checkbox" id="sound-timer-switch" class="mdc-switch__native-control" checked="" />
+                  <input type="checkbox" id="sound-timer-switch" class="mdc-switch__native-control" />
                   <div class="mdc-switch__background">
                     <div class="mdc-switch__knob"></div>
                   </div>
@@ -189,7 +189,7 @@
             <li class="mdc-list-item">
               <span class="mdc-list-item__text">
                 Version
-                <span class="mdc-list-item__text__secondary">1.0.1</span>
+                <span class="mdc-list-item__text__secondary">1.0.2</span>
               </span>
             </li>
             <hr class="mdc-list-divider">

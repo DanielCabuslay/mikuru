@@ -12,23 +12,23 @@ timerAlarm.addEventListener('ended', function() {
 
 function timerDisplay(centiseconds) {
 	if (centiseconds >= 360000) { // >1h
-		if ($('#second-timer-switch').is(':checked')) 
+		if (localStorage.getItem('mikuru-timer-deciseconds') == 'true') 
 			return moment.duration(centiseconds * 10).hours() + ':mm:ss.S';
 		return moment.duration(centiseconds * 10).hours() + ':mm:ss';
 	} if (centiseconds < 360000 && centiseconds >= 60000) { //59m59s-10m
-		if ($('#second-timer-switch').is(':checked')) 
+		if (localStorage.getItem('mikuru-timer-deciseconds') == 'true') 
 			return 'mm:ss.S';
 		return 'mm:ss';
 	} if (centiseconds < 60000 && centiseconds >= 6000) { //9m59s-1m
-		if ($('#second-timer-switch').is(':checked')) 
+		if (localStorage.getItem('mikuru-timer-deciseconds') == 'true') 
 			return 'm:ss.S';
 		return 'm:ss';
 	} if (centiseconds < 6000 && centiseconds >= 1000) { // 59s-10s
-		if ($('#second-timer-switch').is(':checked')) 
+		if (localStorage.getItem('mikuru-timer-deciseconds') == 'true') 
 			return 'ss.S';
 		return 'ss';
 	}
-	if ($('#second-timer-switch').is(':checked')) 
+	if (localStorage.getItem('mikuru-timer-deciseconds') == 'true') 
 		return 's.S';
 	return 's'; // 9.9s-0.0s
 }
@@ -89,7 +89,7 @@ function countdown() {
 		updateCountdown();
 	} else {
 		timerActive = false;
-		if ($('#sound-timer-switch').is(':checked')) 
+		if (localStorage.getItem('mikuru-timer-alarm') == 'true') 
 			timerAlarm.play();
 		stopCountdown();
 	}

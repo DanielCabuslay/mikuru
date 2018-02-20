@@ -3,34 +3,27 @@
 }
 #timer_delete, #timer_add_timer {
 	position: fixed;
-  bottom: 1.75rem;
-  transform: translateX(-50%);	
+	bottom: 1.75rem;
+	transform: translateX(-50%);	
 }
 #timer_delete {
 	left: 50%;
 	bottom: 5.5rem;
 }
 #timer_add_timer {
-  left: 80%;
+  	left: 80%;
 }
 #countdown {
 	margin-top: 3.5rem;
 }
 #countdown_clock {
-	display: flex;
-  flex-direction: column;
-  position: relative;
-  border: 4px solid var(--mdc-theme-text-secondary-on-primary);
-  border-radius: 50%;
-  height: 23rem;
-  width: 23rem;
-  margin: auto;
-  justify-content: center;
+	flex-direction: column;
 }
 #countdown_clock button {
 	margin: 1rem auto;
 }
-#countdown_clock, #timer_pause, #timer_reset, #timer_add_time, #timer_stop, #timer_add_timer, #timer_delete {
+#countdown_clock, #timer_pause, #timer_reset, #timer_add_time, #timer_stop, 
+#timer_add_timer, #timer_delete {
 	display: none;
 }
 .mdc-button {

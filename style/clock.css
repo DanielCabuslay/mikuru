@@ -1,11 +1,25 @@
 #time {
 	margin-bottom: 1rem;
 }
+#time_ampm {
+	font-size: 3.5rem;
+}
 #date {
 	text-transform: uppercase;
 }
 @media (max-width: 599px) {
 	#time {
 		margin-bottom: 0.5rem;
+	}
+	#time_numeral {
+		font-size: 5rem;
+	}
+	#time_ampm {
+		font-size: 2rem;
+	}
+}
+@media (max-width: 400px) {
+	#time_numeral {
+		font-size: 4rem;
 	}
 }
