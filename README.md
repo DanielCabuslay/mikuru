@@ -48,6 +48,9 @@ Various settings can be adjusted in this tab:
 * [Moment.js](https://momentjs.com/)
 
 ## Changelog
+* v1.0.2 (February 20, 2018)
+	* Settings are now saved to localSettings
+	* Various CSS adjustments and cleanup
 * v1.0.1 (January 28, 2018)
 	* Added ability to press enter for timer submissions
 	* Added transition between themes
