@@ -1,0 +1,30 @@
+<mat-tab-group dynamicHeight="true" color="accent">
+  <mat-tab id="clock" label="Clock">
+    <ng-template mat-tab-label>
+      <mat-icon>access_time</mat-icon>
+      <div class="mat-tab-label-text">Clock</div>
+    </ng-template>
+    <app-clock></app-clock>
+  </mat-tab>
+  <mat-tab label="Timer">
+    <ng-template mat-tab-label>
+      <mat-icon>hourglass_empty</mat-icon>
+      <div class="mat-tab-label-text">Timer</div>
+    </ng-template>
+    <app-timer></app-timer>
+  </mat-tab>
+  <mat-tab label="Stopwatch">
+    <ng-template mat-tab-label>
+      <mat-icon>timer</mat-icon>
+      <div class="mat-tab-label-text">Stopwatch</div>
+    </ng-template>
+    <app-stopwatch></app-stopwatch>
+  </mat-tab>
+  <mat-tab label="Settings">
+    <ng-template mat-tab-label>
+      <mat-icon>settings</mat-icon> 
+      <div class="mat-tab-label-text">Settings</div>
+    </ng-template>
+    <app-settings></app-settings>
+  </mat-tab>
+</mat-tab-group>

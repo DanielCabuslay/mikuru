@@ -1,0 +1,6 @@
+.mat-display-4 {
+	margin-bottom: 24px;
+}
+#time_hours_min, #time_seconds {
+	letter-spacing: 0;
+}

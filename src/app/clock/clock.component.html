@@ -1,0 +1,6 @@
+<div class="mat-display-4">
+  <span id="time_hours_min">{{ localHours }}:{{ localMinutes }}</span>
+  <span *ngIf="showSeconds" id="time_seconds">:{{ localSeconds }}</span>
+  <span *ngIf="showAmPm" id="time_ampm" class="mat-display-2"> {{ localAmPm }}</span>
+</div>
+<div class="mat-subheading-2">{{ localDay }}, {{ localMonth }} {{ localDate }}</div>

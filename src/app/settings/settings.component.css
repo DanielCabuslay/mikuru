@@ -1,0 +1,9 @@
+.mat-list, .mat-nav-list, .mat-selection-list {
+	width: 85vw;
+	margin: auto;
+}
+@media (max-width: 599px) {
+	.mat-list, .mat-nav-list, .mat-selection-list {
+		width: 100vw;
+	}
+}

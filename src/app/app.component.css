@@ -1,0 +1,10 @@
+mat-tab-group {
+	height: 100%;
+}
+app-clock, app-timer, app-stopwatch {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+	text-align: center;
+}

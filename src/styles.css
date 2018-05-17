@@ -1,0 +1,40 @@
+html {
+	height: 100vh;
+}
+body {
+	height: 100%;
+	margin: 0;
+}
+:root .mat-tab-label, :root .mat-tab-link {
+	width: 25%;
+	height: 64px;
+}
+.mat-tab-body-wrapper {
+	height: 100%;
+}
+.mat-tab-label-text {
+	text-transform: uppercase;
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin: auto;
+}
+@media screen and (orientation: landscape) {
+	.mat-tab-label-content {
+		display: flex;
+    align-items: flex-end;
+	}
+	.mat-tab-label-text {
+		margin-left: 8px;
+	}
+}
+@media (max-width: 425px) {
+	:root .mat-tab-label, :root .mat-tab-link {
+		height: 48px;
+	}
+	.mat-tab-label-text {
+		display: none;
+	}
+}

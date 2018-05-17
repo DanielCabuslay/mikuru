@@ -1,8 +1,0 @@
-{
-  "short_name": "Clock",
-  "name": "Clock",
-  "theme_color": "#fafafa",
-  "background_color": "#fafafa",
-  "start_url": "index.html",
-  "display": "standalone"
-}
