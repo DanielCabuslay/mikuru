@@ -10,11 +10,17 @@ import { SettingService } from './setting.service';
 })
 export class AppComponent implements OnInit {
 	darkThemeActive: boolean;
-
-	constructor(public overlayContainer: OverlayContainer,
-							private settingService: SettingService) { }
+	timerActive: boolean;
+	stopwatchActive: boolean;
 
 	@HostBinding('class') componentCssClass;
+	
+	constructor(public overlayContainer: OverlayContainer,
+							private settingService: SettingService) {
+		this.timerActive = false;
+		this.stopwatchActive = false;
+	}
+
 
 	ngOnInit() {
 		if (!localStorage.getItem('mikuru-lastUpdated')) {
@@ -34,10 +40,9 @@ export class AppComponent implements OnInit {
 	getTheme(): void {
 		this.darkThemeActive = this.settingService.getSetting('mikuru-general-dark');
 		if (this.darkThemeActive) {
-			this.overlayContainer.getContainerElement().classList.add('dark-theme');
 			this.componentCssClass = 'dark-theme';
 		} else {
-			this.overlayContainer.getContainerElement().classList.remove('dark-theme');
+			this.componentCssClass = '';
 		}
 	}
   

@@ -16,8 +16,9 @@ $app-dark-theme: mat-dark-theme($app-primary-dark, $app-accent);
 	color: white;
 }
 
-.mat-tab-nav-bar, .mat-tab-header {
+.mat-tab-nav-bar, .mat-tab-header, .mat-tab-body-content {
 	background-color: mat-color($app-primary-light);
+	transition: color 0.2s, background-color 0.2s;
 }
 
 .mat-list .mat-subheader, .mat-nav-list .mat-subheader,
@@ -28,4 +29,14 @@ $app-dark-theme: mat-dark-theme($app-primary-dark, $app-accent);
 .dark-theme {
 	@include angular-material-theme($app-dark-theme);
 	background-color: mat-color($app-primary-dark);
+
+	.mat-tab-nav-bar, .mat-tab-header, .mat-tab-body-content {
+		background-color: mat-color($app-primary-dark);
+		color: white;
+	}
+
+	.mat-list .mat-subheader, .mat-nav-list .mat-subheader,
+	.mat-selection-list .mat-subheader {
+		color: mat-color($app-accent);
+	}
 }

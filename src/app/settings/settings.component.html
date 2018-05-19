@@ -6,11 +6,11 @@
 		<mat-divider *ngIf="!isLast"></mat-divider>
 	</mat-list-option>
 	<!-- include other settings here -->
-<!-- 	<h3 mat-subheader>General</h3>
+	<h3 mat-subheader>General</h3>
 	<mat-list-option *ngFor="let setting of generalSettings" (click)="toggleValue(setting.reference)" [selected]="getValue(setting.reference)">
 		<h3 matLine>{{ setting.headline }}</h3>
 		<div matLine class="mat-caption" *ngIf="setting.subHeadline.length > 0">{{ setting.subHeadline }}</div>
-	</mat-list-option> -->
+	</mat-list-option>
 </mat-selection-list>
 <mat-nav-list>
 	<h3 mat-subheader>About</h3>

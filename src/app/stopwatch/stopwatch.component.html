@@ -1,3 +1,14 @@
-<p>
-  stopwatch works!
-</p>
+<div id="stopwatch_display" class="mat-display-4">
+<!-- 	<span id="stopwatch_seconds" *ngIf="stopwatch.getHours() > 0">{{ stopwatch.getHours() }}:</span>
+	<span id="stopwatch_seconds" *ngIf="stopwatch.getMinutes() > 0">{{ stopwatch.getMinutes() }}:</span> -->
+	<span>{{ stopwatch.getTime() }}</span>
+	<span class="mat-display-2"> {{ stopwatch.getFractionalSeconds() }}</span>
+</div>
+<div id="button_row">
+	<button id="stopwatch_reset" mat-button *ngIf="stopwatch.getCentiseconds() > 0" (click)="resetStopwatch()">Reset</button>
+	<button id="stopwatch_start" mat-fab color="accent" (click)="startStopwatch()">
+		<mat-icon aria-label="Start Stopwatch">{{ fabText }}</mat-icon>
+	</button>
+	<button id="stopwatch_lap" mat-button *ngIf="stopwatch.getCentiseconds() > 0 && stopwatch.getStatus()">Lap</button>
+	<button id="stopwatch_save" mat-button *ngIf="stopwatch.getCentiseconds() > 0 && !stopwatch.getStatus()">Share</button>
+</div>

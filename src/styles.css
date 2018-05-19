@@ -15,6 +15,9 @@ body {
 .mat-tab-label-text {
 	text-transform: uppercase;
 }
+.mat-list-item {
+	transition: background 0.2s;
+}
 .container {
 	display: flex;
 	flex-direction: column;

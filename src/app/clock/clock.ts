@@ -1,5 +1,6 @@
 export class Clock {
 	date: Date;
+	interval;
 
 	constructor() {
 		this.date = new Date();
@@ -76,6 +77,14 @@ export class Clock {
 
 	getYear() {
 		return this.date.getFullYear().toString();
+	}
+
+	start() {
+		this.interval = setInterval(() => { this.updateTime(); }, 1000);
+	}
+
+	stop() {
+		clearInterval(this.interval);
 	}
 
 	updateTime() {

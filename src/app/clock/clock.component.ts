@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Clock } from './clock';
 import { SettingService } from '../setting.service';
@@ -8,7 +8,7 @@ import { SettingService } from '../setting.service';
   templateUrl: './clock.component.html',
   styleUrls: ['./clock.component.css']
 })
-export class ClockComponent implements OnInit {
+export class ClockComponent implements OnInit, OnDestroy {
 	localClock: Clock;
   show24h: boolean;
   showSeconds: boolean;
@@ -22,12 +22,11 @@ export class ClockComponent implements OnInit {
     this.settingService.watchStorage().subscribe(() => {
       this.updateSettings();
     });
-  	this.update();
-  	setInterval(() => { this.update(); }, 1000);
+  	this.localClock.start();
   }
 
-  update(): void {
-		this.localClock.updateTime();
+  ngOnDestroy() {
+    this.localClock.stop();
   }
 
   updateSettings(): void {

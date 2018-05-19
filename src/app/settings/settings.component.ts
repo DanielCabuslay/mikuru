@@ -16,9 +16,9 @@ export class SettingsComponent {
       new Setting('mikuru-clock-24h', 'Use 24-hour format'),
       new Setting('mikuru-clock-seconds', 'Display time with seconds')
     ];
-    // this.generalSettings =  [
-    //   new Setting('mikuru-general-dark', 'Dark theme'),
-    // ];
+    this.generalSettings =  [
+      new Setting('mikuru-general-dark', 'Dark theme'),
+    ];
   }
 
   toggleValue(setting: string): void {
