@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Clock } from './clock';
+import { SettingService } from '../setting.service';
 
 @Component({
   selector: 'app-clock',
@@ -8,45 +10,28 @@ import { Clock } from './clock';
 })
 export class ClockComponent implements OnInit {
 	localClock: Clock;
-	localHours: string;
-	localMinutes: string;
-	localSeconds: string;
-	localAmPm: string;
-	localDay: string;
-	localMonth: string;
-	localDate: string;
-	localYear: string;
-  showAmPm: boolean;
+  show24h: boolean;
   showSeconds: boolean;
 
+  constructor(private settingService: SettingService) {
+    this.localClock = new Clock();
+  }
+
   ngOnInit() {
-    if (localStorage.getItem('mikuru-clock-24h') == 'true')
-      this.showAmPm = false;
-    else
-      this.showAmPm = true;
-    if (localStorage.getItem('mikuru-clock-seconds') == 'true')
-      this.showSeconds = true;
-    else
-      this.showSeconds = false;
-  	this.localClock = new Clock();
+    this.updateSettings();
+    this.settingService.watchStorage().subscribe(() => {
+      this.updateSettings();
+    });
   	this.update();
-  	setInterval(() => {
-  		this.update();
-  	}, 1000);
+  	setInterval(() => { this.update(); }, 1000);
   }
 
-  update() {
+  update(): void {
 		this.localClock.updateTime();
-  	this.localHours = this.localClock.getHours();
-  	this.localMinutes = this.localClock.getMinutes();
-  	this.localSeconds = this.localClock.getSeconds();
-  	this.localAmPm = this.localClock.getAmPm();
-  	this.localDay = this.localClock.getDay();
-  	this.localMonth = this.localClock.getMonth();
-  	this.localDate = this.localClock.getDate();
-  	this.localYear = this.localClock.getYear();
   }
 
-
-
+  updateSettings(): void {
+    this.show24h = this.settingService.getSetting('mikuru-clock-24h');
+    this.showSeconds = this.settingService.getSetting('mikuru-clock-seconds');
+  }
 }

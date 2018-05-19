@@ -13,6 +13,7 @@ import { ClockComponent } from './clock/clock.component';
 import { SettingsComponent } from './settings/settings.component';
 import { TimerComponent } from './timer/timer.component';
 import { StopwatchComponent } from './stopwatch/stopwatch.component';
+import { SettingService } from './setting.service';
 import 'hammerjs';
 
 @NgModule({
@@ -33,7 +34,9 @@ import 'hammerjs';
     MatTabsModule,
     MatToolbarModule
   ],
-  providers: [],
+  providers: [
+    SettingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

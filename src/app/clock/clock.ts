@@ -5,9 +5,9 @@ export class Clock {
 		this.date = new Date();
 	}
 
-	getHours() {
+	getHours(show24h: boolean) {
 		let hours = this.date.getHours();
-		if (localStorage.getItem('mikuru-clock-24h') == 'false') {
+		if (!show24h) {
 			if (hours > 12) {
 				hours -= 12;
 			}
@@ -81,6 +81,5 @@ export class Clock {
 	updateTime() {
 		this.date = new Date();
 	}
-
 
 }

@@ -1,29 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Setting } from './setting';
+import { SettingService } from '../setting.service';
 
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.css']
 })
-export class SettingsComponent implements OnInit {
-	clock24hSetting: boolean;
-	clockSecondsSetting: boolean;
+export class SettingsComponent {
+	clockSettings: Setting[];
+  generalSettings: Setting[];
 
-  constructor() { }
-
-  ngOnInit() {
-  	if (localStorage.getItem('mikuru-lastUpdated')) {
-  		this.setSetting(this.clock24hSetting, localStorage.getItem('mikuru-clock-24h'));
-  		this.setSetting(this.clockSecondsSetting, localStorage.getItem('mikuru-clock-seconds'));
-  		this.setSetting(this.clockSecondsSetting, localStorage.getItem('mikuru-general-dark'));
-		}
+  constructor(private settingService: SettingService) {
+    this.clockSettings = [
+      new Setting('mikuru-clock-24h', 'Use 24-hour format'),
+      new Setting('mikuru-clock-seconds', 'Display time with seconds')
+    ];
+    // this.generalSettings =  [
+    //   new Setting('mikuru-general-dark', 'Dark theme'),
+    // ];
   }
 
-  setSetting(setting: boolean, value: string) {
-  	if (value == 'true') 
-  		setting = true;
-  	else
-  		setting = false;
+  toggleValue(setting: string): void {
+    this.settingService.changeSetting(setting);
+  }
+
+  getValue(setting: string): boolean {
+    return this.settingService.getSetting(setting);
   }
 
 }

@@ -1,6 +1,6 @@
 <div class="mat-display-4">
-  <span id="time_hours_min">{{ localHours }}:{{ localMinutes }}</span>
-  <span *ngIf="showSeconds" id="time_seconds">:{{ localSeconds }}</span>
-  <span *ngIf="showAmPm" id="time_ampm" class="mat-display-2"> {{ localAmPm }}</span>
+  <span id="time_hours_min">{{ localClock.getHours(show24h) }}:{{ localClock.getMinutes() }}</span>
+  <span *ngIf="showSeconds" id="time_seconds">:{{ localClock.getSeconds() }}</span>
+  <span *ngIf="!show24h" id="time_ampm" class="mat-display-2"> {{ localClock.getAmPm() }}</span>
 </div>
-<div class="mat-subheading-2">{{ localDay }}, {{ localMonth }} {{ localDate }}</div>
+<div class="mat-subheading-2">{{ localClock.getDay() }}, {{ localClock.getMonth() }} {{ localClock.getDate() }}</div>

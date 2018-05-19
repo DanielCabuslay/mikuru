@@ -1,18 +1,16 @@
-<mat-selection-list selectionChange="">
+<mat-selection-list>
 	<h3 mat-subheader>Clock</h3>
-	<mat-list-option>
-		<h3 matLine>Use 24-hour format</h3>
-		<div matLine class="mat-caption">1:00 PM</div>
-	</mat-list-option>
-	<mat-divider></mat-divider>
-	<mat-list-option>
-		Display time with seconds
+	<mat-list-option *ngFor="let setting of clockSettings; last as isLast" (click)="toggleValue(setting.reference)" [selected]="getValue(setting.reference)">
+		<h3 matLine>{{ setting.headline }}</h3>
+		<div matLine class="mat-caption" *ngIf="setting.subHeadline.length > 0">{{ setting.subHeadline }}</div>
+		<mat-divider *ngIf="!isLast"></mat-divider>
 	</mat-list-option>
 	<!-- include other settings here -->
-	<h3 mat-subheader>General</h3>
-	<mat-list-option>
-		<h3 matLine>Dark theme</h3>
-	</mat-list-option>
+<!-- 	<h3 mat-subheader>General</h3>
+	<mat-list-option *ngFor="let setting of generalSettings" (click)="toggleValue(setting.reference)" [selected]="getValue(setting.reference)">
+		<h3 matLine>{{ setting.headline }}</h3>
+		<div matLine class="mat-caption" *ngIf="setting.subHeadline.length > 0">{{ setting.subHeadline }}</div>
+	</mat-list-option> -->
 </mat-selection-list>
 <mat-nav-list>
 	<h3 mat-subheader>About</h3>
