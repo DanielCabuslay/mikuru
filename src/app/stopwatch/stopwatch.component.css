@@ -1,11 +1,9 @@
 #stopwatch_display, #button_row {
 	transition: transform 0.2s;
 }
-
 #stopwatch_display span {
 	letter-spacing: 0;
 }
-
 #button_row button {
 	text-transform: uppercase;
 	margin: 0 1rem;

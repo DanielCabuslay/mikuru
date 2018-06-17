@@ -9,7 +9,7 @@ export class SettingService {
 	private settings = new Subject<any>();
 
   changeSetting(setting: string): void {
-  	var newValue = !(localStorage.getItem(setting) == 'true');
+  	let newValue = !(localStorage.getItem(setting) == 'true');
   	localStorage.setItem(setting, newValue.toString());
   	this.settings.next(setting);
   }

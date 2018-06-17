@@ -1,0 +1,39 @@
+#timer_display span {
+    letter-spacing: 0;
+}
+mat-divider {
+    margin: 1rem 20vw;
+}
+input {
+    opacity: 0;
+    position: absolute;
+    cursor: default;
+}
+#timer_input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: text;
+}
+#timer_input span:not(:first-child), #timer_input button {
+    margin-left: 10px;
+}
+#timer_input_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 10vw);
+    grid-template-rows: repeat(4, 128px);
+    margin: auto;
+    width: 30vw;
+}
+#timer_input_grid button {
+    height: 128px;
+    width: 128px;
+    margin: auto;
+}
+#timer_input_grid button:last-child {
+    grid-column: 2;
+}
+#button_row button {
+	text-transform: uppercase;
+	margin: 0 1rem;
+}

@@ -21,13 +21,12 @@ export class AppComponent implements OnInit {
 		this.stopwatchActive = false;
 	}
 
-
 	ngOnInit() {
 		if (!localStorage.getItem('mikuru-lastUpdated')) {
 			localStorage.setItem('mikuru-clock-24h', 'false');
 			localStorage.setItem('mikuru-clock-seconds', 'false');
 			// localStorage.setItem('mikuru-timer-alarm', 'true');
-			// localStorage.setItem('mikuru-timer-deciseconds', 'true');
+			localStorage.setItem('mikuru-timer-deciseconds', 'true');
 			localStorage.setItem('mikuru-general-dark', 'false');
 			localStorage.setItem('mikuru-lastUpdated', Date.now().toString());
 		}
@@ -43,6 +42,14 @@ export class AppComponent implements OnInit {
 			this.componentCssClass = 'dark-theme';
 		} else {
 			this.componentCssClass = '';
+		}
+	}
+
+	onTabClick(event): void {
+		if (event.index == 1) {
+			setTimeout(function() {
+				document.getElementById("num_input").focus();
+			}, 500);
 		}
 	}
   

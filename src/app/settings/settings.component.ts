@@ -8,13 +8,18 @@ import { SettingService } from '../setting.service';
   styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent {
-	clockSettings: Setting[];
+  clockSettings: Setting[];
+  timerSettings: Setting[];
   generalSettings: Setting[];
 
   constructor(private settingService: SettingService) {
     this.clockSettings = [
       new Setting('mikuru-clock-24h', 'Use 24-hour format'),
       new Setting('mikuru-clock-seconds', 'Display time with seconds')
+    ];
+    this.timerSettings = [
+      // new Setting('mikuru-timer-alarm', 'Play alarm when timer ends'),
+      new Setting('mikuru-timer-deciseconds', 'Show deciseconds')
     ];
     this.generalSettings =  [
       new Setting('mikuru-general-dark', 'Dark theme'),

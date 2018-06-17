@@ -1,4 +1,4 @@
-<mat-tab-group dynamicHeight="true" color="accent">
+<mat-tab-group dynamicHeight="true" color="accent" (selectedTabChange)="onTabClick($event)">
   <mat-tab id="clock" label="Clock">
     <ng-template mat-tab-label>
       <mat-icon>access_time</mat-icon>

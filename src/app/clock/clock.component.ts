@@ -1,5 +1,4 @@
 import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { Clock } from './clock';
 import { SettingService } from '../setting.service';
 
